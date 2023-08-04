@@ -62,11 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: controller,
         child: Column(
           children: <Widget>[
-            MyHeader(
+            const MyHeader(
               image: "assets/icons/Drcorona.svg",
               textTop: "All you need",
               textBottom: "is stay at home.",
-              offset: offset,
+              offset: 0,
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),

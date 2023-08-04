@@ -6,20 +6,24 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                "Burger".toUpperCase(),
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      color: Colors.yellow,
+                      fontWeight: FontWeight.bold,
+                    ),
+              )),
           Text(
-            "Burger".toUpperCase(),
-            style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  color: kTextcolor,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          Text(
-            "Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor \nincididunt ut labor",
+            orientation == Orientation.portrait ? "" : "Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor \nincididunt ut labor",
             style: TextStyle(
               fontSize: 21,
               color: kTextcolor.withOpacity(0.34),
